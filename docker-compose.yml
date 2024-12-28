@@ -12,7 +12,31 @@ services:
     environment:
       - APP_ENV=dev
       - SCAN_CACHEABLE=false
+      # 添加数据库连接信息环境变量
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=hyperf
+      - DB_USERNAME=hyperf
+      - DB_PASSWORD=hyperf
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: hyperf_db
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: hyperf
+      MYSQL_USER: hyperf
+      MYSQL_PASSWORD: hyperf
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
 
 networks:
   default:
-    name: hyperf-skeleton
+    name: hyperf-network
+
+volumes:
+  db_data:

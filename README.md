@@ -8,18 +8,18 @@ Hyperf has some requirements for the system environment, it can only run under L
 
 The various versions of Dockerfile have been prepared for you in the [hyperf/hyperf-docker](https://github.com/hyperf/hyperf-docker) project, or directly based on the already built [hyperf/hyperf](https://hub.docker.com/r/hyperf/hyperf) Image to run.
 
-When you don't want to use Docker as the basis for your running environment, you need to make sure that your operating environment meets the following requirements:  
+When you don't want to use Docker as the basis for your running environment, you need to make sure that your operating environment meets the following requirements:
 
- - PHP >= 8.1
- - Any of the following network engines
-   - Swoole PHP extension >= 5.0，with `swoole.use_shortname` set to `Off` in your `php.ini`
-   - Swow PHP extension >= 1.3
- - JSON PHP extension
- - Pcntl PHP extension
- - OpenSSL PHP extension （If you need to use the HTTPS）
- - PDO PHP extension （If you need to use the MySQL Client）
- - Redis PHP extension （If you need to use the Redis Client）
- - Protobuf PHP extension （If you need to use the gRPC Server or Client）
+- PHP >= 8.1
+- Any of the following network engines
+  - Swoole PHP extension >= 5.0，with `swoole.use_shortname` set to `Off` in your `php.ini`
+  - Swow PHP extension >= 1.3
+- JSON PHP extension
+- Pcntl PHP extension
+- OpenSSL PHP extension （If you need to use the HTTPS）
+- PDO PHP extension （If you need to use the MySQL Client）
+- Redis PHP extension （If you need to use the Redis Client）
+- Protobuf PHP extension （If you need to use the gRPC Server or Client）
 
 # Installation using Composer
 
@@ -61,3 +61,8 @@ This will start the cli-server on port `9501`, and bind it to all network interf
 - Take a look at `config/routes.php` and `app/Controller/IndexController.php` to see an example of a HTTP entrypoint.
 
 **Remember:** you can always replace the contents of this README.md file to something that fits your project description.
+
+# Build by Docker-compose
+
+1. docker-compose build
+2. docker-compose up
