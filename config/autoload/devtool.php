@@ -9,7 +9,10 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
+
 return [
+    'ide' => 'phpstorm',
     'generator' => [
         'amqp' => [
             'consumer' => [

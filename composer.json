@@ -13,10 +13,12 @@
     "license": "Apache-2.0",
     "require": {
         "php": ">=8.1",
+        "96qbhy/hyperf-auth": "^3.1",
         "hyperf/cache": "~3.1.0",
         "hyperf/command": "~3.1.0",
         "hyperf/config": "~3.1.0",
-        "hyperf/db-connection": "~3.1.0",
+        "hyperf/database": "~3.1.0",
+        "hyperf/db-connection": "^3.1",
         "hyperf/engine": "^2.10",
         "hyperf/framework": "~3.1.0",
         "hyperf/guzzle": "~3.1.0",
@@ -24,12 +26,12 @@
         "hyperf/logger": "~3.1.0",
         "hyperf/memory": "~3.1.0",
         "hyperf/process": "~3.1.0",
-        "hyperf/database": "~3.1.0",
-        "hyperf/redis": "~3.1.0"
+        "hyperf/redis": "~3.1.0",
+        "hyperf/validation": "^3.1"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
-        "hyperf/devtool": "~3.1.0",
+        "hyperf/devtool": "^3.1",
         "hyperf/testing": "~3.1.0",
         "hyperf/watcher": "^3.1",
         "mockery/mockery": "^1.0",
