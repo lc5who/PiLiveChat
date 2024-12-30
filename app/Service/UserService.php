@@ -6,6 +6,7 @@ namespace App\Service;
 
 use App\Exception\ApiException;
 use App\Model\User;
+use App\Resource\UserResource;
 
 class UserService
 {

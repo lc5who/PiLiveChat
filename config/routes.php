@@ -23,8 +23,8 @@ Router::get('/test', [\App\Controller\IndexController::class, 'test']);
 Router::get('/mock/test', [\App\Controller\IndexController::class, 'test']);
 Router::post('/login', [\App\Controller\UserController::class, 'login']);
 
-
 Router::addGroup('/v1', function () {
     Router::get('/test', [\App\Controller\UserController::class, 'test']);
 },['middleware'=>[\Qbhy\HyperfAuth\AuthMiddleware::class]]);
 
+//前台接口
