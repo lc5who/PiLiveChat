@@ -19,9 +19,21 @@ Router::get('/favicon.ico', function () {
     return '';
 });
 
+
+Router::post('/upload', [\App\Controller\IndexController::class, 'upload']);
+//ws
+Router::addServer('ws', function () {
+    Router::get('/ws_operator', 'App\Controller\OperatorSocketController');
+    Router::get('/ws_customer', 'App\Controller\CustomerSocketController');
+
+});
+
+
+
 Router::get('/test', [\App\Controller\IndexController::class, 'test']);
 Router::get('/mock/test', [\App\Controller\IndexController::class, 'test']);
 Router::post('/login', [\App\Controller\UserController::class, 'login']);
+
 
 Router::addGroup('/v1', function () {
     Router::get('/test', [\App\Controller\UserController::class, 'test']);

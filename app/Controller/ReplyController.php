@@ -19,23 +19,28 @@ class ReplyController extends AbstractController
 {
     public function index()
     {
-        return $this->success(ReplyCollection::collection(Reply::all()));
+        return $this->success("ok",ReplyResource::collection(Reply::all()));
+    }
+
+    public function list()
+    {
+        return $this->success("ok",ReplyResource::collection(Reply::all()));
     }
     public function store(ReplyRequest $replyRequest)
     {
         $validated = $replyRequest->validated();
         $reply = Reply::create($validated);
-        return $this->success(new ReplyResource($reply));
+        return $this->success("ok",new ReplyResource($reply));
     }
     public function show(){
         $reply = Reply::findOrFail($this->request->input('id'));
-        return $this->success(new ReplyResource($reply));
+        return $this->success("ok",new ReplyResource($reply));
     }
     public function update(ReplyRequest $replyRequest){
         $validated = $replyRequest->validated();
         $reply = Reply::findOrFail($this->request->input('id'));
         $reply->update($validated);
-        return $this->success(new ReplyResource($reply));
+        return $this->success("ok",new ReplyResource($reply));
     }
     public function destroy(){
         try {

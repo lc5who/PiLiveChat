@@ -27,7 +27,7 @@ class ReplyRequest extends FormRequest
     {
         return [
             'content' => 'required|max:255',
-            'name' => 'required|max:50',
+            'keyword' => 'required|max:50',
         ];
     }
 }

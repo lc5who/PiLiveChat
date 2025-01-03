@@ -28,7 +28,7 @@ abstract class AbstractController
     #[Inject]
     protected ResponseInterface $response;
 
-    public function success($data=[],$msg='success',$code=1)
+    protected function success($msg='success',$data=[],$code=1)
     {
         return $this->response->json([
             'code'=>$code,
@@ -37,7 +37,7 @@ abstract class AbstractController
         ])->withStatus(200);
     }
 
-    public function fail($data=[],$msg='fail',$code=0)
+    protected function fail($msg='fail',$data=[],$code=0)
     {
         return $this->response->json([
             'code'=>$code,

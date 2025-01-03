@@ -21,9 +21,9 @@ class Reply extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected array $fillable = ['name','content'];
+    protected array $fillable = ['keyword','content'];
 
 
 
-    public bool $timestamps = false;
+    public bool $timestamps = true;
 }

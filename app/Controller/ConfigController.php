@@ -33,4 +33,5 @@ class ConfigController extends  AbstractController
             return $this->fail('修改失败');
         }
     }
+
 }

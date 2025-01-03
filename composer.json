@@ -20,15 +20,17 @@
         "hyperf/database": "~3.1.0",
         "hyperf/db-connection": "^3.1",
         "hyperf/engine": "^2.10",
+        "hyperf/filesystem": "*",
         "hyperf/framework": "~3.1.0",
         "hyperf/guzzle": "~3.1.0",
         "hyperf/http-server": "~3.1.0",
         "hyperf/logger": "~3.1.0",
         "hyperf/memory": "~3.1.0",
         "hyperf/process": "~3.1.0",
-        "hyperf/redis": "~3.1.0",
+        "hyperf/redis": "^3.1",
         "hyperf/resource": "^3.1",
-        "hyperf/validation": "^3.1"
+        "hyperf/validation": "^3.1",
+        "hyperf/websocket-server": "^3.1"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",

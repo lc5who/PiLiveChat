@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /**
  * This file is part of qbhy/hyperf-auth.
  *
@@ -9,6 +10,7 @@ declare(strict_types=1);
  * @contact  qbhy0715@qq.com
  * @license  https://github.com/qbhy/hyperf-auth/blob/master/LICENSE
  */
+
 use Qbhy\SimpleJwt\Encoders;
 use Qbhy\SimpleJwt\EncryptAdapters as Encrypter;
 use function Hyperf\Support\env;
@@ -52,13 +54,13 @@ return [
              * 可选配置
              * jwt 生命周期，单位秒，默认一天
              */
-            'ttl' => (int) env('SIMPLE_JWT_TTL', 60 * 60 * 24),
+            'ttl' => (int)env('SIMPLE_JWT_TTL', 60 * 60 * 24),
 
             /*
              * 可选配置
              * 允许过期多久以内的 token 进行刷新，单位秒，默认一周
              */
-            'refresh_ttl' => (int) env('SIMPLE_JWT_REFRESH_TTL', 60 * 60 * 24 * 7),
+            'refresh_ttl' => (int)env('SIMPLE_JWT_REFRESH_TTL', 60 * 60 * 24 * 7),
 
             /*
              * 可选配置
@@ -121,13 +123,13 @@ return [
              * 可选配置
              * jwt 生命周期，单位秒，默认一天
              */
-            'ttl' => (int) env('SIMPLE_JWT_TTL', 60 * 60 * 24),
+            'ttl' => (int)env('SIMPLE_JWT_TTL', 60 * 60 * 24),
 
             /*
              * 可选配置
              * 允许过期多久以内的 token 进行刷新，单位秒，默认一周
              */
-            'refresh_ttl' => (int) env('SIMPLE_JWT_REFRESH_TTL', 60 * 60 * 24 * 7),
+            'refresh_ttl' => (int)env('SIMPLE_JWT_REFRESH_TTL', 60 * 60 * 24 * 7),
 
             /*
              * 可选配置
@@ -157,11 +159,11 @@ return [
              * 可选配置
              * 缓存类
              */
-            'cache' => new \Doctrine\Common\Cache\FilesystemCache(sys_get_temp_dir()),
-            // 如果需要分布式部署，请选择 redis 或者其他支持分布式的缓存驱动
-            //            'cache' => function () {
-            //                return make(\Qbhy\HyperfAuth\HyperfRedisCache::class);
-            //            },
+//            'cache' => new \Doctrine\Common\Cache\FilesystemCache(sys_get_temp_dir()),
+//             如果需要分布式部署，请选择 redis 或者其他支持分布式的缓存驱动
+            'cache' => function () {
+                return make(\Qbhy\HyperfAuth\HyperfRedisCache::class);
+            },
 
             /*
              * 可选配置
